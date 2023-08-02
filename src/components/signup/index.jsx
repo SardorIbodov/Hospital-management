@@ -1,9 +1,39 @@
 import React from "react";
+import {
+  Gradient,
+  Wrapper,
+  Content,
+  Form,
+  Input,
+  Button,
+  LogoWrapper,
+  ContentWrapper,
+} from "./style";
 
-export const Signup = () => {
-  return <div>
-		<h1>Sign up</h1>
-	</div>;
+export const SignUp = () => {
+  return (
+    <Gradient>
+      <Wrapper>
+        <div className="container">
+          <ContentWrapper>
+            <LogoWrapper>
+              <div>
+                <span className="logo-med">Med</span>
+                <span className="logo-dical">dical</span>
+              </div>
+            </LogoWrapper>
+            <Content>
+              <Form>
+                <Input placeholder="Login" />
+                <Input placeholder="Password" />
+                <Button type="submit">Login</Button>
+              </Form>
+            </Content>
+          </ContentWrapper>
+        </div>
+      </Wrapper>
+    </Gradient>
+  );
 };
 
-export default Signup;
+export default SignUp;

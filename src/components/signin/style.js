@@ -1,50 +1,51 @@
 import { styled } from "styled-components";
+import main from "../../assets/images/main.png";
 
-const Wrapper = styled.div`
-  box-sizing: border-box;
-  padding: 20px;
-  height: 100%;
-  min-height: 100vh;
+const Gradient = styled.div`
   background: linear-gradient(90deg, #0098b9 0%, rgba(255, 255, 255, 0) 100%);
 `;
-
-const Logo = styled.img``;
-
-const Content = styled.div`
-  display: grid;
-  grid-template-columns: 40% 60%;
-  align-items: center;
-  @media screen and (max-width: 700px) {
-    grid-template-columns: 100%;
-    justify-items: center;
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-image: url(${main}) !important;
+  background-repeat: no-repeat;
+  background-size: 700px;
+  background-position: right 30px center;
+  @media screen and (max-width: 800px) {
+    background-image: none !important;
   }
 `;
 
-const ContentLeft = styled.div`
+const LogoWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 200px;
-  @media screen and (max-width: 900px) {
-    row-gap: 100px;
-  }
-  @media screen and (max-width: 700px) {
-    align-items: center;
-    width: 100%;
-  }
+  align-items: center;
+  height: 80px;
+`;
+
+const ContentWrapper = styled.div`
+  position: relative;
+`;
+
+const Content = styled.div`
+  display: block;
+  width: 100%;
+  top: 40vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
 `;
 
 const Form = styled.form`
+  display: block;
   width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 50px;
-  @media screen and (max-width: 700px) {
-    align-items: center;
-  }
 `;
 
 const Input = styled.input`
+  font-family: var(--WorkSans);
+  padding: 10px 0;
   width: 100%;
   max-width: 423px;
   border: none;
@@ -53,8 +54,10 @@ const Input = styled.input`
   color: #fff;
   outline: none;
   &::placeholder {
-    color: #fff;
-    opacity: 0.5;
+    color: var(--c1);
+  }
+  @media screen and (max-width: 576px) {
+    max-width: 100%;
   }
 `;
 
@@ -63,16 +66,30 @@ const Button = styled.button`
   padding: 15px 0;
   border: none;
   border-radius: 2px;
-  background: #079bbb;
+  background: var(--c3);
+  font-family: var(--WorkSans);
+  color: var(--c1);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  @media screen and (max-width: 700px) {
-    display: none;
+  transition: all 0s linear;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    transform: scale(0.96);
+  }
+  @media screen and (max-width: 576px) {
+    width: 100%;
   }
 `;
 
-export { Wrapper, Logo, Content, ContentLeft, Form, Image, Input, Button };
+export {
+  Gradient,
+  Wrapper,
+  LogoWrapper,
+  ContentWrapper,
+  Content,
+  Form,
+  Input,
+  Button,
+};
