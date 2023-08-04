@@ -2,10 +2,11 @@ import React from "react";
 import SubNavbar from "../../components/subnavbar";
 import { Wrapper, Link, Section, LoginBtn, WrapperSection } from "./style";
 import { navbar } from "../../utils/navbar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import Footer from "../footer";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <>
       <SubNavbar />
@@ -24,7 +25,18 @@ const Navbar = () => {
               })}
             </Section>
             <Section>
-              <LoginBtn>Login</LoginBtn>
+              <LoginBtn
+                onClick={() => {
+                  if (localStorage.getItem("token")) {
+                    localStorage.removeItem("token");
+                    window.location.reload();
+                  } else {
+                    navigate("/signin");
+                  }
+                }}
+              >
+                {localStorage.getItem("token") ? "Log out" : "Login"}
+              </LoginBtn>
             </Section>
           </WrapperSection>
         </div>

@@ -29,7 +29,7 @@ const ContentWrapper = styled.div`
 const Content = styled.div`
   display: block;
   width: 100%;
-  top: 40vh;
+  top: 20vh;
   position: absolute;
   display: flex;
   align-items: center;
@@ -40,7 +40,7 @@ const Form = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
+  row-gap: 25px;
 `;
 
 const Input = styled.input`

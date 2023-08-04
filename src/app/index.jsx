@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "../components/navbar";
 
 import { navbar } from "../utils/navbar";
-import Signin, { SignUp } from "../components/signup";
+import Signin from "../components/signin";
+import SignUp from "../components/signup";
 export const Root = () => {
   return (
     <BrowserRouter>
@@ -15,8 +16,8 @@ export const Root = () => {
         </Route>
         <Route exact path="/" element={<Navigate to={"/home"} />} />
         <Route path="*" element={<h1>Not fount 404</h1>} />
-        <Route path="signin" element={<Signin />} />
-        <Route path="signup" element={<SignUp />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   );

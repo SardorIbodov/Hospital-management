@@ -83,6 +83,15 @@ const Button = styled.button`
   }
 `;
 
+const ToSignUp = styled.span`
+  color: var(--c1);
+  font-size: 12px;
+  span {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+`;
+
 export {
   Gradient,
   Wrapper,
@@ -92,4 +101,5 @@ export {
   Form,
   Input,
   Button,
+  ToSignUp,
 };

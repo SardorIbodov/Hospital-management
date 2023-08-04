@@ -11,7 +11,7 @@ export const navbar = [
   {
     id: useUniqueId,
     title: "Home",
-    path: "/",
+    path: "/home",
     element: <Home />,
     private: true,
     hidden: false,
